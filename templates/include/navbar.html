@@ -1,0 +1,69 @@
+{% load static %}
+
+<!-- Main header start -->
+<header class="main-header sticky-header header-with-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand company-logo" href="{% url 'home:index' %}">
+                <img src="{% static 'img/logos/logo.png' %}" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a
+                        {% if 'index' in request.path or '/' == request.path %}
+                          class="nav-link active"
+                        {% else %}
+                             class="nav-link "
+                        {% endif %}
+                         class="nav-link" href="{% url 'home:index' %}" >
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cars.html">
+                            Voiture
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="/carhouse/about.html">
+                            About
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a
+                        {% if 'service' in request.path %}
+                          class="nav-link active"
+                        {% endif %}
+                         class="nav-link" href="{% url 'home:service' %}">
+                            Services
+                        </a>
+                    </li>
+                    
+                    
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li> -->
+
+                <li class="nav-item">
+                    <a href="login.html" class="sign-in nav-link"><i class="fa fa-sign-in"></i> Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.html" class="sign-in nav-link"><i class="fa fa-user"></i> Inscription</a>
+                </li>
+
+                    <li class="nav-item dropdown m-hide">
+                        <a href="#full-page-search" class="nav-link h-icon">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- Main header end -->
